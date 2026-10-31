@@ -1,0 +1,50 @@
+{
+  "accepted_at": "2026-10-31T17:36:30.654945+00:00",
+  "base_url": "http://127.0.0.1:18083",
+  "checks": [
+    "three vendor deliveries",
+    "automatic retries",
+    "duplicate submission",
+    "idempotency conflict",
+    "failed task discovery",
+    "configuration repair",
+    "manual retry with stable task ID",
+    "historical configuration snapshots",
+    "delivery log queries",
+    "metrics",
+    "API and PostgreSQL restart persistence"
+  ],
+  "tasks": [
+    {
+      "vendor": "ads",
+      "task_id": "14556379-ce3a-49f7-87fb-6156ed7b5a0c",
+      "status": "SUCCEEDED",
+      "attempt_count": 2
+    },
+    {
+      "vendor": "crm",
+      "task_id": "0795bf28-f0cc-4486-bc89-18ba1eb50959",
+      "status": "SUCCEEDED",
+      "attempt_count": 2
+    },
+    {
+      "vendor": "inventory",
+      "task_id": "fb008e29-8d70-4b12-95b9-2c5d0d0572a7",
+      "status": "SUCCEEDED",
+      "attempt_count": 2
+    },
+    {
+      "vendor": "inventory-repair",
+      "task_id": "0ca87290-7841-426a-8ee4-35717ea0f507",
+      "status": "SUCCEEDED",
+      "attempt_count": 3
+    }
+  ],
+  "result": "PASS",
+  "environment": {
+    "go": "1.26.0 windows/amd64",
+    "postgresql": "17.6",
+    "mock_fail_first": 1,
+    "execution": "compiled API + compiled mock vendor + real PostgreSQL"
+  }
+}

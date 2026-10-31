@@ -1,0 +1,19 @@
+{
+  "notification-final.exe": {
+    "bytes": 19320832,
+    "format": "Windows PE"
+  },
+  "mockvendor-final.exe": {
+    "bytes": 8731136,
+    "format": "Windows PE"
+  },
+  "notification-linux": {
+    "bytes": 19070098,
+    "format": "Linux ELF"
+  },
+  "mockvendor-linux": {
+    "bytes": 8686231,
+    "format": "Linux ELF"
+  },
+  "format_check": "PASS"
+}

@@ -1,0 +1,8 @@
+/bin/
+*.exe
+*.test
+.env
+/coverage.out
+/submission/
+__pycache__/
+*.pyc

@@ -1,0 +1,57 @@
+services:
+  app:
+    profiles: [app, demo]
+    build: .
+    image: notification-service:local
+    environment:
+      DATABASE_URL: postgres://notification:notification@db:5432/notifications?sslmode=disable
+      HTTP_ADDR: 0.0.0.0:8080
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1:8080/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # Demo only: share app's network namespace so schema.sql's loopback URLs
+  # work unchanged. No second set of persistent vendor configuration is needed.
+  mock:
+    profiles: [demo]
+    build: .
+    image: notification-service:local
+    entrypoint: ["/usr/local/bin/mockvendor"]
+    network_mode: service:app
+    environment:
+      MOCK_FAIL_FIRST: "1"
+    depends_on:
+      app:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1:9090/healthz"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: notifications
+      POSTGRES_USER: notification
+      POSTGRES_PASSWORD: notification
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - notification_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/001-schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U notification -d notifications"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  notification_data:

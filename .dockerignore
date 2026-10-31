@@ -1,0 +1,11 @@
+.git
+.env
+bin
+artifacts
+submission
+*.pdf
+*.zip
+*.out
+tests
+scripts
+.github

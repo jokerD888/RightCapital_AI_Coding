@@ -1,0 +1,172 @@
+?   	rightcapital/notification/cmd/mockvendor	[no test files]
+?   	rightcapital/notification/cmd/server	[no test files]
+=== RUN   TestAcceptValidation
+=== RUN   TestAcceptValidation/missing_key
+=== RUN   TestAcceptValidation/long_key
+=== RUN   TestAcceptValidation/wrong_content_type
+=== RUN   TestAcceptValidation/broken_JSON
+=== RUN   TestAcceptValidation/two_documents
+=== RUN   TestAcceptValidation/null_request
+=== RUN   TestAcceptValidation/missing_payload
+=== RUN   TestAcceptValidation/array_payload
+=== RUN   TestAcceptValidation/null_payload
+=== RUN   TestAcceptValidation/unknown_field
+=== RUN   TestAcceptValidation/invalid_source
+=== RUN   TestAcceptValidation/blank_event
+=== RUN   TestAcceptValidation/oversize_body
+=== RUN   TestAcceptValidation/oversize_trailing_whitespace
+--- PASS: TestAcceptValidation (0.01s)
+    --- PASS: TestAcceptValidation/missing_key (0.00s)
+    --- PASS: TestAcceptValidation/long_key (0.00s)
+    --- PASS: TestAcceptValidation/wrong_content_type (0.00s)
+    --- PASS: TestAcceptValidation/broken_JSON (0.00s)
+    --- PASS: TestAcceptValidation/two_documents (0.00s)
+    --- PASS: TestAcceptValidation/null_request (0.00s)
+    --- PASS: TestAcceptValidation/missing_payload (0.00s)
+    --- PASS: TestAcceptValidation/array_payload (0.00s)
+    --- PASS: TestAcceptValidation/null_payload (0.00s)
+    --- PASS: TestAcceptValidation/unknown_field (0.00s)
+    --- PASS: TestAcceptValidation/invalid_source (0.00s)
+    --- PASS: TestAcceptValidation/blank_event (0.00s)
+    --- PASS: TestAcceptValidation/oversize_body (0.00s)
+    --- PASS: TestAcceptValidation/oversize_trailing_whitespace (0.00s)
+=== RUN   TestAcceptResults
+=== RUN   TestAcceptResults/accepted
+=== RUN   TestAcceptResults/conflicting_payload
+=== RUN   TestAcceptResults/unknown_vendor
+=== RUN   TestAcceptResults/unsupported_payload
+=== RUN   TestAcceptResults/database_failure
+--- PASS: TestAcceptResults (0.02s)
+    --- PASS: TestAcceptResults/accepted (0.00s)
+    --- PASS: TestAcceptResults/conflicting_payload (0.00s)
+    --- PASS: TestAcceptResults/unknown_vendor (0.00s)
+    --- PASS: TestAcceptResults/unsupported_payload (0.00s)
+    --- PASS: TestAcceptResults/database_failure (0.02s)
+=== RUN   TestReadAndHealth
+=== RUN   TestReadAndHealth/task
+=== RUN   TestReadAndHealth/invalid_id
+=== RUN   TestReadAndHealth/missing_task
+=== RUN   TestReadAndHealth/get_storage_down
+=== RUN   TestReadAndHealth/healthy
+=== RUN   TestReadAndHealth/unhealthy
+--- PASS: TestReadAndHealth (0.00s)
+    --- PASS: TestReadAndHealth/task (0.00s)
+    --- PASS: TestReadAndHealth/invalid_id (0.00s)
+    --- PASS: TestReadAndHealth/missing_task (0.00s)
+    --- PASS: TestReadAndHealth/get_storage_down (0.00s)
+    --- PASS: TestReadAndHealth/healthy (0.00s)
+    --- PASS: TestReadAndHealth/unhealthy (0.00s)
+PASS
+coverage: 12.4% of statements in ./internal/...
+ok  	rightcapital/notification/internal/api	0.921s	coverage: 12.4% of statements in ./internal/...
+=== RUN   TestFailureThenIdempotentSuccess
+--- PASS: TestFailureThenIdempotentSuccess (0.00s)
+PASS
+coverage: 5.6% of statements in ./internal/...
+ok  	rightcapital/notification/internal/mockvendor	0.525s	coverage: 5.6% of statements in ./internal/...
+=== RUN   TestDigestIgnoresObjectOrderButTracksContent
+--- PASS: TestDigestIgnoresObjectOrderButTracksContent (0.00s)
+PASS
+coverage: 0.6% of statements in ./internal/...
+ok  	rightcapital/notification/internal/task	0.665s	coverage: 0.6% of statements in ./internal/...
+=== RUN   TestRenderEscapesAndPreservesNumbers
+--- PASS: TestRenderEscapesAndPreservesNumbers (0.00s)
+=== RUN   TestRenderRejectsInvalidTemplates
+=== RUN   TestRenderRejectsInvalidTemplates/missing_field
+=== RUN   TestRenderRejectsInvalidTemplates/syntax_error
+=== RUN   TestRenderRejectsInvalidTemplates/invalid_JSON
+=== RUN   TestRenderRejectsInvalidTemplates/null_headers
+=== RUN   TestRenderRejectsInvalidTemplates/non-string_header
+=== RUN   TestRenderRejectsInvalidTemplates/null_header_value
+=== RUN   TestRenderRejectsInvalidTemplates/newline_header
+=== RUN   TestRenderRejectsInvalidTemplates/bad_header_name
+=== RUN   TestRenderRejectsInvalidTemplates/duplicate_header_casing
+--- PASS: TestRenderRejectsInvalidTemplates (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/missing_field (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/syntax_error (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/invalid_JSON (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/null_headers (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/non-string_header (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/null_header_value (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/newline_header (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/bad_header_name (0.00s)
+    --- PASS: TestRenderRejectsInvalidTemplates/duplicate_header_casing (0.00s)
+PASS
+coverage: 6.3% of statements in ./internal/...
+ok  	rightcapital/notification/internal/vendor	0.616s	coverage: 6.3% of statements in ./internal/...
+=== RUN   TestResponseReadIsBoundedAndClosed
+--- PASS: TestResponseReadIsBoundedAndClosed (0.00s)
+=== RUN   TestIncompleteResponseIsRetryable
+--- PASS: TestIncompleteResponseIsRetryable (0.00s)
+=== RUN   TestBackoffIsExponentialCappedAndJittered
+--- PASS: TestBackoffIsExponentialCappedAndJittered (0.00s)
+=== RUN   TestRetryAfter
+--- PASS: TestRetryAfter (0.00s)
+PASS
+coverage: 10.5% of statements in ./internal/...
+ok  	rightcapital/notification/internal/worker	1.337s	coverage: 10.5% of statements in ./internal/...
+=== RUN   TestManagementFailureRepairAndManualRetry
+--- PASS: TestManagementFailureRepairAndManualRetry (0.45s)
+=== RUN   TestConcurrentManualRetryOnlyRequeuesOnce
+--- PASS: TestConcurrentManualRetryOnlyRequeuesOnce (0.23s)
+=== RUN   TestVendorConfigurationCRUDAndValidation
+--- PASS: TestVendorConfigurationCRUDAndValidation (0.11s)
+=== RUN   TestManualRetrySchemaUpgrade
+--- PASS: TestManualRetrySchemaUpgrade (0.11s)
+=== RUN   TestReceiverPostgres
+=== RUN   TestReceiverPostgres/seed_and_accept_ads
+=== RUN   TestReceiverPostgres/seed_and_accept_crm
+=== RUN   TestReceiverPostgres/seed_and_accept_inventory
+=== RUN   TestReceiverPostgres/concurrent_duplicate_requests
+=== RUN   TestReceiverPostgres/conflict_and_JSON_key_reordering
+=== RUN   TestReceiverPostgres/unknown_vendor
+=== RUN   TestReceiverPostgres/JSON_outside_PostgreSQL_limits_is_a_client_error
+=== RUN   TestReceiverPostgres/bad_configuration_does_not_block_acceptance_and_seed_preserves_edits
+--- PASS: TestReceiverPostgres (0.26s)
+    --- PASS: TestReceiverPostgres/seed_and_accept_ads (0.01s)
+    --- PASS: TestReceiverPostgres/seed_and_accept_crm (0.00s)
+    --- PASS: TestReceiverPostgres/seed_and_accept_inventory (0.00s)
+    --- PASS: TestReceiverPostgres/concurrent_duplicate_requests (0.13s)
+    --- PASS: TestReceiverPostgres/conflict_and_JSON_key_reordering (0.00s)
+    --- PASS: TestReceiverPostgres/unknown_vendor (0.00s)
+    --- PASS: TestReceiverPostgres/JSON_outside_PostgreSQL_limits_is_a_client_error (0.00s)
+    --- PASS: TestReceiverPostgres/bad_configuration_does_not_block_acceptance_and_seed_preserves_edits (0.00s)
+=== RUN   TestWorkerDeliversAllVendorsOutsideTransaction
+--- PASS: TestWorkerDeliversAllVendorsOutsideTransaction (0.28s)
+=== RUN   TestWorkerPollingRetriesUntilSuccess
+--- PASS: TestWorkerPollingRetriesUntilSuccess (2.36s)
+=== RUN   TestWorkerUsesFixedLatestConfigurationOnRetry
+--- PASS: TestWorkerUsesFixedLatestConfigurationOnRetry (0.15s)
+=== RUN   TestWorkerFailureClassificationAndExhaustion
+=== RUN   TestWorkerFailureClassificationAndExhaustion/HTTP_400
+=== RUN   TestWorkerFailureClassificationAndExhaustion/HTTP_302
+=== RUN   TestWorkerFailureClassificationAndExhaustion/HTTP_429
+=== RUN   TestWorkerFailureClassificationAndExhaustion/HTTP_503
+--- PASS: TestWorkerFailureClassificationAndExhaustion (0.65s)
+    --- PASS: TestWorkerFailureClassificationAndExhaustion/HTTP_400 (0.13s)
+    --- PASS: TestWorkerFailureClassificationAndExhaustion/HTTP_302 (0.27s)
+    --- PASS: TestWorkerFailureClassificationAndExhaustion/HTTP_429 (0.13s)
+    --- PASS: TestWorkerFailureClassificationAndExhaustion/HTTP_503 (0.12s)
+=== RUN   TestWorkerRespectsRetryAfter
+--- PASS: TestWorkerRespectsRetryAfter (0.12s)
+=== RUN   TestWorkerHTTPTimeoutThenRetry
+--- PASS: TestWorkerHTTPTimeoutThenRetry (2.15s)
+=== RUN   TestWorkerBoundsHugeAndBinaryResponse
+--- PASS: TestWorkerBoundsHugeAndBinaryResponse (0.16s)
+=== RUN   TestWorkerSkipsLockedTask
+--- PASS: TestWorkerSkipsLockedTask (0.20s)
+=== RUN   TestConcurrentWorkersDoNotClaimSameTask
+--- PASS: TestConcurrentWorkersDoNotClaimSameTask (0.25s)
+=== RUN   TestLeaseRecoveryAndLateResultFencing
+=== RUN   TestLeaseRecoveryAndLateResultFencing/max_attempts=1
+=== RUN   TestLeaseRecoveryAndLateResultFencing/max_attempts=3
+--- PASS: TestLeaseRecoveryAndLateResultFencing (0.25s)
+    --- PASS: TestLeaseRecoveryAndLateResultFencing/max_attempts=1 (0.12s)
+    --- PASS: TestLeaseRecoveryAndLateResultFencing/max_attempts=3 (0.13s)
+=== RUN   TestWorkerPollingRecoversAbandonedLease
+--- PASS: TestWorkerPollingRecoversAbandonedLease (1.59s)
+=== RUN   TestFailedLogWriteRollsBackTaskAndRemainsRecoverable
+--- PASS: TestFailedLogWriteRollsBackTaskAndRemainsRecoverable (0.14s)
+PASS
+coverage: 72.8% of statements in ./internal/...
+ok  	rightcapital/notification/tests/integration	9.666s	coverage: 72.8% of statements in ./internal/...
